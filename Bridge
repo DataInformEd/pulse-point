@@ -18,7 +18,7 @@
         const tag = urlParams.get('tag');
 
         // PASTE YOUR GOOGLE SCRIPT URL BETWEEN THE QUOTES BELOW
-        const googleScriptUrl = "https://script.google.com/macros/s/AKfycbw4LbeMA48OG9MdZoCAw8SESiAvaqZfanIIyI_di-o2VBmbYpuQTScPsXfjGGoM54nR/exec"; 
+        const googleScriptUrl = "https://script.google.com/macros/s/AKfycbwe-qd3ltECwYLio7WfxAC7RuVx1MN2zFxmJue1AD9dHRz-_Wvd5FQA2K2nv67F6g/exec"; 
 
         if (tag) {
             // This is the "Clean Push" that fixes the mobile bug
