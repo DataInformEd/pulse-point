@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Connecting to Survey...</title>
+    <style>
+        body { font-family: sans-serif; display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100vh; background: #f3f4f6; color: #374151; }
+        .loader { border: 5px solid #e5e7eb; border-top: 5px solid #1A4685; border-radius: 50%; width: 40px; height: 40px; animation: spin 1s linear infinite; margin-bottom: 20px; }
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+    </style>
+</head>
+<body>
+    <div class="loader"></div>
+    <p>Opening Pulse Point...</p>
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const tag = urlParams.get('tag');
+
+        // PASTE YOUR GOOGLE SCRIPT URL BETWEEN THE QUOTES BELOW
+        const googleScriptUrl = "https://script.google.com/macros/s/AKfycbw4LbeMA48OG9MdZoCAw8SESiAvaqZfanIIyI_di-o2VBmbYpuQTScPsXfjGGoM54nR/exec"; 
+
+        if (tag) {
+            // This is the "Clean Push" that fixes the mobile bug
+            window.location.replace(googleScriptUrl + "?tag=" + encodeURIComponent(tag));
+        } else {
+            document.body.innerHTML = "<h3>Configuration Error</h3><p>No survey tag detected.</p>";
+        }
+    </script>
+</body>
+</html>
